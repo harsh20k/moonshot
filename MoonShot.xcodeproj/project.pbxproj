@@ -11,6 +11,15 @@
 		3A4F4ED52C3E3DD70002D02C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F4ED42C3E3DD70002D02C /* ContentView.swift */; };
 		3A4F4ED72C3E3DD90002D02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4F4ED62C3E3DD90002D02C /* Assets.xcassets */; };
 		3A4F4EDA2C3E3DD90002D02C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4F4ED92C3E3DD90002D02C /* Preview Assets.xcassets */; };
+		3A4F4EE22C3E95040002D02C /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A4F4EE02C3E95040002D02C /* astronauts.json */; };
+		3A4F4EE32C3E95040002D02C /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A4F4EE12C3E95040002D02C /* missions.json */; };
+		3A4F4EE52C3EB4020002D02C /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F4EE42C3EB4020002D02C /* Bundle-Decodable.swift */; };
+		3A4F4EE72C3EB4620002D02C /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F4EE62C3EB4620002D02C /* Astronaut.swift */; };
+		3A4F4EEB2C3EBB4D0002D02C /* Missions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F4EEA2C3EBB4D0002D02C /* Missions.swift */; };
+		3A4F4EED2C3EF8BB0002D02C /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F4EEC2C3EF8BB0002D02C /* Color-Theme.swift */; };
+		3A4F4EEF2C3F93AB0002D02C /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F4EEE2C3F93AB0002D02C /* MissionView.swift */; };
+		3A4F4EF12C3FD0E40002D02C /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F4EF02C3FD0E40002D02C /* CustomDivider.swift */; };
+		3A4F4EF32C3FD94A0002D02C /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F4EF22C3FD94A0002D02C /* AstronautView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,15 @@
 		3A4F4ED42C3E3DD70002D02C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A4F4ED62C3E3DD90002D02C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4F4ED92C3E3DD90002D02C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A4F4EE02C3E95040002D02C /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
+		3A4F4EE12C3E95040002D02C /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
+		3A4F4EE42C3EB4020002D02C /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		3A4F4EE62C3EB4620002D02C /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
+		3A4F4EEA2C3EBB4D0002D02C /* Missions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Missions.swift; sourceTree = "<group>"; };
+		3A4F4EEC2C3EF8BB0002D02C /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
+		3A4F4EEE2C3F93AB0002D02C /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		3A4F4EF02C3FD0E40002D02C /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
+		3A4F4EF22C3FD94A0002D02C /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +71,13 @@
 			children = (
 				3A4F4ED22C3E3DD70002D02C /* MoonShotApp.swift */,
 				3A4F4ED42C3E3DD70002D02C /* ContentView.swift */,
+				3A4F4EF02C3FD0E40002D02C /* CustomDivider.swift */,
+				3A4F4EEE2C3F93AB0002D02C /* MissionView.swift */,
+				3A4F4EF22C3FD94A0002D02C /* AstronautView.swift */,
+				3A4F4EEC2C3EF8BB0002D02C /* Color-Theme.swift */,
+				3A4F4EE42C3EB4020002D02C /* Bundle-Decodable.swift */,
+				3A4F4EEA2C3EBB4D0002D02C /* Missions.swift */,
+				3A4F4EE62C3EB4620002D02C /* Astronaut.swift */,
 				3A4F4ED62C3E3DD90002D02C /* Assets.xcassets */,
 				3A4F4ED82C3E3DD90002D02C /* Preview Content */,
 			);
@@ -62,6 +87,8 @@
 		3A4F4ED82C3E3DD90002D02C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				3A4F4EE02C3E95040002D02C /* astronauts.json */,
+				3A4F4EE12C3E95040002D02C /* missions.json */,
 				3A4F4ED92C3E3DD90002D02C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -125,7 +152,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4F4EE22C3E95040002D02C /* astronauts.json in Resources */,
 				3A4F4EDA2C3E3DD90002D02C /* Preview Assets.xcassets in Resources */,
+				3A4F4EE32C3E95040002D02C /* missions.json in Resources */,
 				3A4F4ED72C3E3DD90002D02C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4F4EEF2C3F93AB0002D02C /* MissionView.swift in Sources */,
+				3A4F4EF32C3FD94A0002D02C /* AstronautView.swift in Sources */,
 				3A4F4ED52C3E3DD70002D02C /* ContentView.swift in Sources */,
+				3A4F4EF12C3FD0E40002D02C /* CustomDivider.swift in Sources */,
+				3A4F4EED2C3EF8BB0002D02C /* Color-Theme.swift in Sources */,
 				3A4F4ED32C3E3DD70002D02C /* MoonShotApp.swift in Sources */,
+				3A4F4EEB2C3EBB4D0002D02C /* Missions.swift in Sources */,
+				3A4F4EE52C3EB4020002D02C /* Bundle-Decodable.swift in Sources */,
+				3A4F4EE72C3EB4620002D02C /* Astronaut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
