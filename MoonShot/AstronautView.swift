@@ -9,6 +9,7 @@ struct AstronautView: View {
 				Image(astronaut.id)
 					.resizable()
 					.scaledToFit()
+					.clipShape(RoundedRectangle(cornerRadius: 5))
 				
 				Text(astronaut.description)
 					.padding()

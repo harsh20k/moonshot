@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-	let astronauts:[String: Astronaut] = Bundle.main.decode("astronauts.json")
+	let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
 	let missions: [Mission] = Bundle.main.decode("missions.json")
 	
 	let columns = [
@@ -13,21 +13,19 @@ struct ContentView: View {
 	
 	@State private var isShowingAsGrid = true
 	
-    var body: some View {
-		NavigationStack{
+	var body: some View {
+		NavigationStack {
 			ScrollView {
-				LazyVGrid(columns: (isShowingAsGrid ? columns : columnsList)){
-					ForEach(missions) {mission in
-						NavigationLink {
-							MissionView(mission: mission, astronauts: astronauts)
-						} label: {
-							VStack{
+				LazyVGrid(columns: (isShowingAsGrid ? columns : columnsList)) {
+					ForEach(missions) { mission in
+						NavigationLink(value: mission) {
+							VStack {
 								Image(mission.image)
 									.resizable()
 									.scaledToFit()
-									.frame(width:100,height: 100)
+									.frame(width: 100, height: 100)
 									.padding(isShowingAsGrid ? 0 : 15)
-								VStack{
+								VStack {
 									Text(mission.displayName)
 										.font(.headline)
 										.foregroundStyle(.white)
@@ -39,10 +37,11 @@ struct ContentView: View {
 								.frame(maxWidth: .infinity)
 								.background(.lightBackground)
 							}
-							.clipShape(.rect(cornerRadius: 10))
-							.overlay(RoundedRectangle(cornerRadius: 10)
-								.stroke(.lightBackground))
-							
+							.clipShape(RoundedRectangle(cornerRadius: 10))
+							.overlay(
+								RoundedRectangle(cornerRadius: 10)
+									.stroke(.lightBackground)
+							)
 						}
 					}
 				}
@@ -52,17 +51,22 @@ struct ContentView: View {
 			.background(.darkBackground)
 			.preferredColorScheme(.dark)
 			.toolbar {
-				Button("List"){
-					withAnimation{
+				Button("List") {
+					withAnimation {
 						isShowingAsGrid.toggle()
 					}
 				}
 			}
+			.navigationDestination(for: Mission.self) { mission in
+				MissionView(mission: mission, astronauts: astronauts)
+			}
+			.navigationDestination(for: Astronaut.self) { astronaut in
+				AstronautView(astronaut: astronaut)
+			}
 		}
-    }
+	}
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 }
-

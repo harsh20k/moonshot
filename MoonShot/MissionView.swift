@@ -1,14 +1,13 @@
 import SwiftUI
 
 struct MissionView: View {
-	struct CrewMember{
+	struct CrewMember: Hashable {
 		let role: String
 		let astronaut: Astronaut
 	}
 	
 	let mission: Mission
 	let crew: [CrewMember]
-//	let astronauts: [String: Astronaut]
 	
 	init(mission: Mission, astronauts: [String: Astronaut]) {
 		self.mission = mission
@@ -22,15 +21,13 @@ struct MissionView: View {
 		}
 	}
 	
-    var body: some View {
+	var body: some View {
 		ScrollView {
 			VStack {
 				Image(mission.image)
 					.resizable()
 					.scaledToFit()
-					.containerRelativeFrame(.horizontal) { width, axis in
-						width * 0.6
-					}
+					.frame(width: 200)
 				Text(mission.formattedLaunchDate)
 					.font(.caption)
 				CustomDivider()
@@ -44,26 +41,24 @@ struct MissionView: View {
 			}
 			CustomDivider()
 			ScrollView(.horizontal, showsIndicators: false) {
-				HStack{
-					ForEach(crew, id: \.role) { crew in
-						NavigationLink {
-							AstronautView(astronaut: crew.astronaut)
-						} label: {
+				HStack {
+					ForEach(crew, id: \.self) { crewMember in
+						NavigationLink(value: crewMember.astronaut) {
 							HStack {
-								Image(crew.astronaut.id)
+								Image(crewMember.astronaut.id)
 									.resizable()
 									.scaledToFit()
 									.frame(width: 104, height: 72)
-									.clipShape(RoundedRectangle( cornerRadius: 15))
+									.clipShape(RoundedRectangle(cornerRadius: 15))
 									.overlay(
 										RoundedRectangle(cornerRadius: 15.0)
 											.strokeBorder(.white, lineWidth: 1)
-										)
+									)
 								VStack(alignment: .leading) {
-									Text(crew.astronaut.name)
+									Text(crewMember.astronaut.name)
 										.foregroundStyle(.white)
 										.font(.headline)
-									Text(crew.role)
+									Text(crewMember.role)
 										.foregroundStyle(Color.white.opacity(0.6))
 								}
 								.padding(.trailing)
@@ -76,13 +71,8 @@ struct MissionView: View {
 		.navigationTitle(mission.displayName)
 		.navigationBarTitleDisplayMode(.inline)
 		.background(.darkBackground)
+		.navigationDestination(for: Astronaut.self) { astronaut in
+			AstronautView(astronaut: astronaut)
+		}
 	}
-}
-
-#Preview {
-	let missions: [Mission] = Bundle.main.decode("missions.json")
-	let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-	
-	return MissionView(mission: missions[0],astronauts: astronauts)
-		.preferredColorScheme(.dark)
 }
